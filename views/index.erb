@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>My Movies</title>
 </head>
 
@@ -10,12 +10,10 @@
   <h1>My Movies</h1>
   <ul>
     <% @movies.each do |movie| %>
-      <li>
-        <a href="/movies/<%= movie.id %>"><%= movie.title %></a>
-      </li>
+      <li><a href="/movies/<%= movie.id %>"><%= movie.title.capitalize %></a></li>
     <% end %>
   </ul>
-  <a href="/movies/new">Add new movie</a>
+  <a href="/movies/new">Add New Movie</a>
 </body>
 
 </html>

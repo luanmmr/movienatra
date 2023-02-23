@@ -1,0 +1,21 @@
+---
+1: !ruby/object:Movie
+  title: Titanic
+  director: Steven Spielberg
+  year: '1996'
+  id: 1
+2: !ruby/object:Movie
+  title: Avatar
+  director: Stiven Spielberg
+  year: '2023'
+  id: 2
+3: !ruby/object:Movie
+  title: O Exterminador do Futuro
+  director: Chuck
+  year: '1994'
+  id: 3
+4: !ruby/object:Movie
+  title: Guardioes da Galaxia
+  director: Gun
+  year: '2023'
+  id: 4

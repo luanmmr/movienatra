@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - 4567:4567
+    volumes:
+      - .:/usr/src/app
+    command: ruby -I lib/ app.rb -o 0.0.0.0

@@ -1,21 +1,18 @@
 require 'yaml/store'
 
 class MovieStore
-  NAME_FILE = "movie.yml"
+  FILE = "movies.yml"
 
-  def self.save(movie)
+  def self.create(movie)
     store.transaction do
-      movie.id = movie_id
+      movie.id = id_generator
       store[movie.id] = movie
     end
-
-  rescue => error
-    return false
   end
 
   def self.all
     store.transaction do
-      store.roots.map {|id| store[id] }
+      store.roots.map {|id| store[id]}
     end
   end
 
@@ -27,13 +24,12 @@ class MovieStore
 
   private
 
-  def self.movie_id
-    return 1 unless store.roots.max
-
-    store.roots.max + 1
+  def self.id_generator
+    last_id = store.roots.max || 0
+    last_id += 1
   end
 
   def self.store
-    @store ||= YAML::Store.new(NAME_FILE)
+    @store ||= YAML::Store.new(FILE)
   end
 end
